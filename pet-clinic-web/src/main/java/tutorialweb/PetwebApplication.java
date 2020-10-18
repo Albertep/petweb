@@ -1,4 +1,4 @@
-package tutorialweb.petweb;
+package tutorialweb;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
