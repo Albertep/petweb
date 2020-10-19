@@ -1,14 +1,10 @@
 package tutorialweb.petweb.services;
 
+import tutorialweb.petweb.Model.Owner;
 import tutorialweb.petweb.Model.Pet;
 
 import java.util.Set;
 
-public interface PetService {
+public interface PetService extends CrudService<Pet,Long>{
 
-    Pet findById(Long id);
-
-    Pet save(Pet pet);
-
-    Set<Pet> findall();
 }
