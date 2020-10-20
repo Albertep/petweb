@@ -1,11 +1,11 @@
 package tutorialweb.petweb.services.map;
 
 import tutorialweb.petweb.Model.Vet;
-import tutorialweb.petweb.services.CrudService;
+import tutorialweb.petweb.services.VetService;
 
 import java.util.Set;
 
-public class VetServiceMap extends AbstractMapService<Vet,Long> implements CrudService<Vet,Long> {
+public class VetServiceMap extends AbstractMapService<Vet,Long> implements VetService {
     @Override
     public Set<Vet> findAll() {
         return super.findAll();
