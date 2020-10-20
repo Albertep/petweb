@@ -1,10 +1,12 @@
 package tutorialweb.petweb.services.map;
 
+import org.springframework.stereotype.Service;
 import tutorialweb.petweb.Model.Owner;
 import tutorialweb.petweb.services.OwnerService;
 
 import java.util.Set;
 
+@Service
 public class OwnerServiceMap extends  AbstractMapService<Owner, Long> implements OwnerService {
     @Override
     public Set<Owner> findAll() {
