@@ -6,8 +6,6 @@ import tutorialweb.petweb.Model.Owner;
 import tutorialweb.petweb.Model.Vet;
 import tutorialweb.petweb.services.OwnerService;
 import tutorialweb.petweb.services.VetService;
-import tutorialweb.petweb.services.map.OwnerServiceMap;
-import tutorialweb.petweb.services.map.VetServiceMap;
 
 @Component
 public class DataLoader implements CommandLineRunner {
