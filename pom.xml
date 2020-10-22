@@ -16,6 +16,7 @@
     </distributionManagement>
     -->
 
+
     <name>petweb</name>
     <description>Demo project de macotas</description>
 
@@ -31,12 +32,6 @@
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.1.0.RELEASE</version>
     </parent>
-
-    <properties>
-        <java.version>11</java.version>
-        <maven.compiler.source>${java.version}</maven.compiler.source>
-        <maven.compiler.target>${java.version}</maven.compiler.target>
-    </properties>
 
     <dependencies>
 

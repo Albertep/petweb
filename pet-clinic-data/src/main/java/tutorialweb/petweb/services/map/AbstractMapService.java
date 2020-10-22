@@ -4,7 +4,7 @@ import tutorialweb.petweb.Model.BaseEntity;
 
 import java.util.*;
 
-public abstract class AbstractMapService<T extends BaseEntity,ID extends Long> {
+public abstract class AbstractMapService<T extends BaseEntity,ID > {
 
     protected Map<Long,T> map= new HashMap<>();
 
@@ -34,14 +34,11 @@ public abstract class AbstractMapService<T extends BaseEntity,ID extends Long> {
 
     private Long getNextId(){
 
-        Long nextId;
-
         try {
-            nextId = Collections.max(map.keySet()) + 1;
+            return Collections.max(map.keySet()) + 1;
         } catch (NoSuchElementException e) {
-            nextId = 1L;
+            return 1L;
         }
 
-        return nextId;
     }
 }
