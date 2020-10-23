@@ -2,6 +2,6 @@ package tutorialweb.petweb.services;
 
 import tutorialweb.petweb.Model.Speciality;
 
-public interface SpecialitiesService extends CrudService<Speciality, Long> {
+public interface SpecialityService extends CrudService<Speciality, Long> {
 
 }

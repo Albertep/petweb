@@ -2,5 +2,5 @@ package tutorialweb.petweb.services;
 
 import tutorialweb.petweb.Model.PetType;
 
-public interface PetTypeServices extends  CrudService<PetType,Long> {
+public interface PetTypeService extends  CrudService<PetType,Long> {
 }

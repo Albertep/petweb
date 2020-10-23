@@ -5,17 +5,17 @@ import tutorialweb.petweb.Model.Owner;
 import tutorialweb.petweb.Model.Pet;
 import tutorialweb.petweb.services.OwnerService;
 import tutorialweb.petweb.services.PetService;
-import tutorialweb.petweb.services.PetTypeServices;
+import tutorialweb.petweb.services.PetTypeService;
 
 import java.util.Set;
 
 @Service
 public class OwnerServiceMap extends  AbstractMapService<Owner, Long> implements OwnerService {
-    private final PetTypeServices petTypeServices;
+    private final PetTypeService petTypeService;
     private final PetService petService;
 
-    public OwnerServiceMap(PetTypeServices petType, PetService pet) {
-        this.petTypeServices = petType;
+    public OwnerServiceMap(PetTypeService petType, PetService pet) {
+        this.petTypeService = petType;
         this.petService = pet;
     }
 
@@ -47,7 +47,7 @@ public class OwnerServiceMap extends  AbstractMapService<Owner, Long> implements
                 object.getPets().forEach(pet->{
                     if(pet.getPetType()!=null){
                         if(pet.getPetType().getId()==null){
-                            pet.setPetType(petTypeServices.save(pet.getPetType()));
+                            pet.setPetType(petTypeService.save(pet.getPetType()));
                         }
                     }else{
                         throw new RuntimeException("Pet Type is required");
