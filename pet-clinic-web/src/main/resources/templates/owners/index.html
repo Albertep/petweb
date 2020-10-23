@@ -12,11 +12,15 @@
         <th style="width: 150px">Id</th>
         <th style="width: 150px">FirstName</th>
         <th style="width: 150px">LastName</th>
+        <th style="width: 150px">Pet</th>
+        <th style="width: 150px">PetType</th>
     </tr>
     <tr th:each="owner : ${prop}">
-    <td th:text="${owner?.id}">Joe</td>
-    <td th:text="${owner?.firstname}">Joe</td>
-    <td th:text="${owner?.lastname}">Joe</td>
+    <td th:text="${owner.id}">Joe</td>
+    <td th:text="${owner.firstname}">Joe</td>
+    <td th:text="${owner.lastname}">Joe</td>
+    <td th:text="${owner.pets}">Joe</td>
+    <td th:text="${owner.pets}">Joe</td>
     </tr>
     </thead>
 </table>

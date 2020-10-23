@@ -3,11 +3,14 @@ package tutorialweb.bootstrap;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import tutorialweb.petweb.Model.Owner;
+import tutorialweb.petweb.Model.Pet;
 import tutorialweb.petweb.Model.PetType;
 import tutorialweb.petweb.Model.Vet;
 import tutorialweb.petweb.services.OwnerService;
 import tutorialweb.petweb.services.PetTypeServices;
 import tutorialweb.petweb.services.VetService;
+
+import java.time.LocalDate;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -39,6 +42,18 @@ public class DataLoader implements CommandLineRunner {
         alberte.setId(1L);
         alberte.setFirstname("Berte");
         alberte.setLastname("Pazos");
+        alberte.setAdress("CALLE FALSA 123");
+        alberte.setCity("Ciudad Piruleta");
+        alberte.setTelephone("123456789");
+
+        Pet pet= new Pet();
+        pet.setPetType(dog);
+        pet.setId(1L);
+        pet.setName("doggie");
+        pet.setOwner(alberte);
+        pet.setDate(LocalDate.now());
+        alberte.getPets().add(pet);
+
 
         ownerservice.save(alberte);
 
@@ -46,6 +61,18 @@ public class DataLoader implements CommandLineRunner {
         eire.setId(2L);
         eire.setFirstname("Eire");
         eire.setLastname("Pazos");
+        eire.setAdress("CALLE FALSA 123");
+        eire.setCity("Ciudad Piruleta");
+        eire.setTelephone("123456789");
+
+
+        Pet pet2= new Pet();
+        pet2.setPetType(cat);
+        pet2.setId(1L);
+        pet2.setName("catty");
+        pet2.setOwner(eire);
+        pet2.setDate(LocalDate.now());
+        eire.getPets().add(pet);
 
         ownerservice.save(eire);
 
