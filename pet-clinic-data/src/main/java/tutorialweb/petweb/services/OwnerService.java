@@ -1,6 +1,6 @@
 package tutorialweb.petweb.services;
 
-import tutorialweb.petweb.Model.Owner;
+import tutorialweb.petweb.model.Owner;
 
 public interface OwnerService extends CrudService<Owner,Long>{
 

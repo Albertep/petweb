@@ -1,4 +1,4 @@
-package tutorialweb.petweb.Model;
+package tutorialweb.petweb.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

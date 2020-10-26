@@ -2,7 +2,7 @@ package tutorialweb.bootstrap;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import tutorialweb.petweb.Model.*;
+import tutorialweb.petweb.model.*;
 import tutorialweb.petweb.services.OwnerService;
 import tutorialweb.petweb.services.PetTypeService;
 import tutorialweb.petweb.services.SpecialityService;

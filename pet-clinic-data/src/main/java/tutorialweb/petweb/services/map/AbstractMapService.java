@@ -1,6 +1,6 @@
 package tutorialweb.petweb.services.map;
 
-import tutorialweb.petweb.Model.BaseEntity;
+import tutorialweb.petweb.model.BaseEntity;
 
 import java.util.*;
 

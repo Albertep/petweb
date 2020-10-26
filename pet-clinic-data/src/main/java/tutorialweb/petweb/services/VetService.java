@@ -1,6 +1,6 @@
 package tutorialweb.petweb.services;
 
-import tutorialweb.petweb.Model.Vet;
+import tutorialweb.petweb.model.Vet;
 
 public interface VetService extends CrudService<Vet,Long>{
 }

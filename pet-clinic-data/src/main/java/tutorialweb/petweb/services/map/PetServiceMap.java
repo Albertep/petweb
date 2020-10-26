@@ -1,7 +1,7 @@
 package tutorialweb.petweb.services.map;
 
 import org.springframework.stereotype.Service;
-import tutorialweb.petweb.Model.Pet;
+import tutorialweb.petweb.model.Pet;
 import tutorialweb.petweb.services.PetService;
 
 import java.util.Set;
