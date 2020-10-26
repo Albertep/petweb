@@ -6,10 +6,10 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Specialties")
+@Table(name = "specialties")
 public class Speciality extends BaseEntity {
 
-    @Column("description")
+    @Column(name = "description")
     private String description;
 
     public String getDescription() {

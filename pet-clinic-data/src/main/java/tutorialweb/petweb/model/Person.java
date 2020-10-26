@@ -6,26 +6,23 @@ import javax.persistence.MappedSuperclass;
 @MappedSuperclass
 public class Person extends BaseEntity{
     @Column(name = "first_name")
-
-    private String firstname;
+    private String firstName;
 
     @Column(name = "last_name")
-    private String Lastname;
-
-
+    private String lastName;
     public String getFirstname() {
-        return firstname;
+        return firstName;
     }
 
     public void setFirstname(String firstname) {
-        this.firstname = firstname;
+        this.firstName = firstname;
     }
 
     public String getLastname() {
-        return Lastname;
+        return lastName;
     }
 
     public void setLastname(String lastname) {
-        Lastname = lastname;
+        firstName = lastname;
     }
 }

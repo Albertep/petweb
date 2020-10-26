@@ -1,5 +1,7 @@
 package tutorialweb.petweb.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -9,7 +11,6 @@ import java.util.Set;
 @Entity
 @Table(name = "pets")
 public class Pet extends BaseEntity {
-
     @Column(name = "name")
     private String name;
 
@@ -18,14 +19,15 @@ public class Pet extends BaseEntity {
     private PetType petType;
 
     @ManyToOne
-    @Column(name = "owner_id")
+    @JoinColumn(name = "owner_id")
     private Owner owner;
 
-    @Column(name = "birthday")
-    private LocalDate date;
+    @Column(name = "birth_date")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate birthDate;
 
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "pet")
-    private Set<Visit>visits=new HashSet<>();
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet")
+    private Set<Visit> visits = new HashSet<>();
 
     public String getName() {
         return name;
@@ -52,11 +54,11 @@ public class Pet extends BaseEntity {
     }
 
     public LocalDate getDate() {
-        return date;
+        return birthDate;
     }
 
     public void setDate(LocalDate date) {
-        this.date = date;
+        this.birthDate = date;
     }
 
     public Set<Visit> getVisits() {

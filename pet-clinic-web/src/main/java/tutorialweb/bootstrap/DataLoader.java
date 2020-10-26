@@ -60,7 +60,7 @@ public class DataLoader implements CommandLineRunner {
         alberte.setId(1L);
         alberte.setFirstname("Berte");
         alberte.setLastname("Pazos");
-        alberte.setAdress("CALLE FALSA 123");
+        alberte.setAddress("CALLE FALSA 123");
         alberte.setCity("Ciudad Piruleta");
         alberte.setTelephone("123456789");
 
@@ -79,7 +79,7 @@ public class DataLoader implements CommandLineRunner {
         eire.setId(2L);
         eire.setFirstname("Eire");
         eire.setLastname("Pazos");
-        eire.setAdress("CALLE FALSA 123");
+        eire.setAddress("CALLE FALSA 123");
         eire.setCity("Ciudad Piruleta");
         eire.setTelephone("123456789");
 
