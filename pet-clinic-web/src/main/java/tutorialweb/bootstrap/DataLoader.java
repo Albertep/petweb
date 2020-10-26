@@ -82,14 +82,13 @@ public class DataLoader implements CommandLineRunner {
         eire.setCity("Ciudad Piruleta");
         eire.setTelephone("123456789");
 
-
         Pet pet2= new Pet();
         pet2.setPetType(cat);
-        pet2.setId(1L);
+        pet2.setId(2L);
         pet2.setName("catty");
         pet2.setOwner(eire);
         pet2.setDate(LocalDate.now());
-        eire.getPets().add(pet);
+        eire.getPets().add(pet2);
 
         ownerservice.save(eire);
 

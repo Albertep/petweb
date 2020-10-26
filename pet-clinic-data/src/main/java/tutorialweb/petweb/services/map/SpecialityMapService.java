@@ -1,11 +1,13 @@
 package tutorialweb.petweb.services.map;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import tutorialweb.petweb.model.Speciality;
 import tutorialweb.petweb.services.SpecialityService;
 
 import java.util.Set;
 
+@Profile({"default","Map"})
 @Service
 public class SpecialityMapService extends AbstractMapService<Speciality, Long> implements SpecialityService {
     @Override

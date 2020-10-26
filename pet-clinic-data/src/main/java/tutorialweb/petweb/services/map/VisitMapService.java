@@ -1,14 +1,14 @@
 package tutorialweb.petweb.services.map;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
-import tutorialweb.petweb.model.Vet;
 import tutorialweb.petweb.model.Visit;
-import tutorialweb.petweb.services.VetService;
 import tutorialweb.petweb.services.VisitService;
 
 import java.util.Set;
 
 @Service
+@Profile({"default","Map"})
 public class VisitMapService extends AbstractMapService<Visit,Long> implements VisitService {
 
     @Override
