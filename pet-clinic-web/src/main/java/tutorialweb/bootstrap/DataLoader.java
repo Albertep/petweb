@@ -3,10 +3,7 @@ package tutorialweb.bootstrap;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import tutorialweb.petweb.model.*;
-import tutorialweb.petweb.services.OwnerService;
-import tutorialweb.petweb.services.PetTypeService;
-import tutorialweb.petweb.services.SpecialityService;
-import tutorialweb.petweb.services.VetService;
+import tutorialweb.petweb.services.*;
 
 import java.time.LocalDate;
 
@@ -17,12 +14,14 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialityService specialityService;
+    private final VisitService visitService;
 
-    public DataLoader(OwnerService ownerservice, VetService vetService, PetTypeService petTypeService, SpecialityService specialityService) {
+    public DataLoader(OwnerService ownerservice, VetService vetService, PetTypeService petTypeService, SpecialityService specialityService, VisitService visitService) {
         this.ownerservice = ownerservice;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialityService = specialityService;
+        this.visitService = visitService;
     }
 
     @Override
@@ -96,7 +95,15 @@ public class DataLoader implements CommandLineRunner {
 
         System.out.println("Loaded Owners");
 
+        Visit catVisit= new Visit();
+        catVisit.setId(1L);
+        catVisit.setPet(pet2);
+        catVisit.setDate(LocalDate.now());
+        catVisit.setDescription("Un buen zagal visitando a un gato");
         System.out.println("Loading Vets.....");
+
+        visitService.save(catVisit);
+
 
         Vet paula= new Vet();
         paula.setId(1L);
