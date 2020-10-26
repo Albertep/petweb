@@ -10,11 +10,11 @@ import tutorialweb.petweb.services.PetTypeService;
 import java.util.Set;
 
 @Service
-public class OwnerServiceMap extends  AbstractMapService<Owner, Long> implements OwnerService {
+public class OwnerMapService extends  AbstractMapService<Owner, Long> implements OwnerService {
     private final PetTypeService petTypeService;
     private final PetService petService;
 
-    public OwnerServiceMap(PetTypeService petType, PetService pet) {
+    public OwnerMapService(PetTypeService petType, PetService pet) {
         this.petTypeService = petType;
         this.petService = pet;
     }
