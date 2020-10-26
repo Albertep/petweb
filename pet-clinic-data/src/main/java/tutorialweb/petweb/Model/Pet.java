@@ -1,12 +1,25 @@
 package tutorialweb.petweb.Model;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 
+
+@Entity
+@Table(name = "pets")
 public class Pet extends BaseEntity {
 
+    @Column(name = "name")
     private String name;
+
+    @ManyToOne
+    @JoinColumn(name = "type_id")
     private PetType petType;
+
+    @ManyToOne
+    @Column(name = "owner_id")
     private Owner owner;
+
+    @Column(name = "birthday")
     private LocalDate date;
 
     public String getName() {
