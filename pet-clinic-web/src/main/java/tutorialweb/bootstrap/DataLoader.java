@@ -57,8 +57,8 @@ public class DataLoader implements CommandLineRunner {
 
         Owner alberte=new Owner();
         alberte.setId(1L);
-        alberte.setFirstname("Berte");
-        alberte.setLastname("Pazos");
+        alberte.setFirstName("Berte");
+        alberte.setLastName("Pazos");
         alberte.setAddress("CALLE FALSA 123");
         alberte.setCity("Ciudad Piruleta");
         alberte.setTelephone("123456789");
@@ -68,7 +68,7 @@ public class DataLoader implements CommandLineRunner {
         pet.setId(1L);
         pet.setName("doggie");
         pet.setOwner(alberte);
-        pet.setDate(LocalDate.now());
+        pet.setBirthDate(LocalDate.now());
         alberte.getPets().add(pet);
 
 
@@ -76,8 +76,8 @@ public class DataLoader implements CommandLineRunner {
 
         Owner eire=new Owner();
         eire.setId(2L);
-        eire.setFirstname("Eire");
-        eire.setLastname("Pazos");
+        eire.setFirstName("Eire");
+        eire.setLastName("Pazos");
         eire.setAddress("CALLE FALSA 123");
         eire.setCity("Ciudad Piruleta");
         eire.setTelephone("123456789");
@@ -87,7 +87,7 @@ public class DataLoader implements CommandLineRunner {
         pet2.setId(2L);
         pet2.setName("catty");
         pet2.setOwner(eire);
-        pet2.setDate(LocalDate.now());
+        pet2.setBirthDate(LocalDate.now());
         eire.getPets().add(pet2);
 
         ownerservice.save(eire);
@@ -106,16 +106,16 @@ public class DataLoader implements CommandLineRunner {
 
         Vet paula= new Vet();
         paula.setId(1L);
-        paula.setFirstname("Paula");
-        paula.setLastname("Martinez");
+        paula.setFirstName("Paula");
+        paula.setLastName("Martinez");
         paula.getSpecialties().add(speciality);
 
         vetService.save(paula);
 
         Vet estela= new Vet();
         estela.setId(2L);
-        estela.setFirstname("Estela");
-        estela.setLastname("Martinez");
+        estela.setFirstName("Estela");
+        estela.setLastName("Martinez");
         estela.getSpecialties().add(speciality2);
 
         vetService.save(estela);
