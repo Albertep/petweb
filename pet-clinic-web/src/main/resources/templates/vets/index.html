@@ -16,8 +16,8 @@
     </tr>
     <tr th:each="vet : ${vets}">
         <td th:text="${vet?.id}">Joe</td>
-        <td th:text="${vet?.firstname}">Joe</td>
-        <td th:text="${vet?.lastname}">Joe</td>
+        <td th:text="${vet?.getFirstName()}">Joe</td>
+        <td th:text="${vet?.getLastName()}">Joe</td>
     </tr>
     </thead>
 </table>

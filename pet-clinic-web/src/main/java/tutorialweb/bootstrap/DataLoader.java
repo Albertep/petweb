@@ -40,23 +40,20 @@ public class DataLoader implements CommandLineRunner {
         PetType savedDogPetType= petTypeService.save(dog);
 
         PetType cat= new PetType();
-        dog.setName("Cat");
+        cat.setName("Cat");
         PetType savedCatPetType= petTypeService.save(cat);
 
         Speciality speciality= new Speciality();
-        speciality.setId(1L);
         speciality.setDescription("Mi especialidad es comer perritos muy rápido");
         specialityService.save(speciality);
 
         Speciality speciality2= new Speciality();
-        speciality2.setId(2L);
         speciality2.setDescription("Mi especialidad es no mancharme las manos al comer patatas fritas del Mcdonalds");
         specialityService.save(speciality2);
 
         System.out.println("Loading Owners...");
 
         Owner alberte=new Owner();
-        alberte.setId(1L);
         alberte.setFirstName("Berte");
         alberte.setLastName("Pazos");
         alberte.setAddress("CALLE FALSA 123");
@@ -65,7 +62,6 @@ public class DataLoader implements CommandLineRunner {
 
         Pet pet= new Pet();
         pet.setPetType(dog);
-        pet.setId(1L);
         pet.setName("doggie");
         pet.setOwner(alberte);
         pet.setBirthDate(LocalDate.now());
@@ -75,7 +71,6 @@ public class DataLoader implements CommandLineRunner {
         ownerservice.save(alberte);
 
         Owner eire=new Owner();
-        eire.setId(2L);
         eire.setFirstName("Eire");
         eire.setLastName("Pazos");
         eire.setAddress("CALLE FALSA 123");
@@ -84,7 +79,6 @@ public class DataLoader implements CommandLineRunner {
 
         Pet pet2= new Pet();
         pet2.setPetType(cat);
-        pet2.setId(2L);
         pet2.setName("catty");
         pet2.setOwner(eire);
         pet2.setBirthDate(LocalDate.now());
@@ -95,7 +89,6 @@ public class DataLoader implements CommandLineRunner {
         System.out.println("Loaded Owners");
 
         Visit catVisit= new Visit();
-        catVisit.setId(1L);
         catVisit.setPet(pet2);
         catVisit.setDate(LocalDate.now());
         catVisit.setDescription("Un buen zagal visitando a un gato");
@@ -105,7 +98,6 @@ public class DataLoader implements CommandLineRunner {
 
 
         Vet paula= new Vet();
-        paula.setId(1L);
         paula.setFirstName("Paula");
         paula.setLastName("Martinez");
         paula.getSpecialties().add(speciality);
@@ -113,7 +105,6 @@ public class DataLoader implements CommandLineRunner {
         vetService.save(paula);
 
         Vet estela= new Vet();
-        estela.setId(2L);
         estela.setFirstName("Estela");
         estela.setLastName("Martinez");
         estela.getSpecialties().add(speciality2);
