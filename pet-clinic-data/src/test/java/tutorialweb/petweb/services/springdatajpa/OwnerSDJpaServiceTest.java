@@ -8,8 +8,6 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import tutorialweb.petweb.model.Owner;
 import tutorialweb.petweb.repositories.OwnerRepository;
-import tutorialweb.petweb.repositories.PetRepository;
-import tutorialweb.petweb.repositories.PetTypeRepository;
 
 import java.util.HashSet;
 import java.util.Optional;
@@ -27,10 +25,6 @@ class OwnerSDJpaServiceTest {
     public static final String LAST_NAME = "Hey";
     @Mock
     OwnerRepository ownerRepository;
-    @Mock
-    PetRepository petRepository;
-    @Mock
-    PetTypeRepository petTypeRepository;
 
     @InjectMocks
     OwnerSDJpaService service;
@@ -49,7 +43,7 @@ class OwnerSDJpaServiceTest {
         when(ownerRepository.findByLastName(any())).thenReturn(owner);
         Owner smith= service.findByLastName(LAST_NAME);
         assertEquals(LAST_NAME,smith.getLastName());
-        verify(ownerRepository.findByLastName(any()));
+        verify(ownerRepository).findByLastName(any());
 
         /*ownerRepository.save(owner);
         ownerRepository.findByLastName("Hey");
