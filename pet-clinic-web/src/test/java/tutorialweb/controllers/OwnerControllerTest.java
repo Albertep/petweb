@@ -3,7 +3,6 @@ package tutorialweb.controllers;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.ArgumentMatchers;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -12,16 +11,13 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import tutorialweb.petweb.model.Owner;
 import tutorialweb.petweb.model.Pet;
 import tutorialweb.petweb.services.OwnerService;
-import tutorialweb.petweb.services.PetService;
+//import tutorialweb.petweb.services.PetService;
 
 import java.util.*;
 
 import static org.hamcrest.Matchers.*;
-import static org.mockito.ArgumentMatchers.anyLong;
-import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @ExtendWith(MockitoExtension.class)
@@ -30,9 +26,9 @@ class OwnerControllerTest {
     @Mock
     OwnerService ownerService;
 
-    @Mock
+   /* @Mock
     PetService petService;
-
+    */
     @InjectMocks
     OwnerController ownerController;
 
