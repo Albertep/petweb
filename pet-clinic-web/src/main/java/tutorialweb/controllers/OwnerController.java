@@ -28,20 +28,10 @@ public class OwnerController {
     public String listOwners(Model model){
         model.addAttribute("prop",ownerService.findAll());
         Set<Owner> own=ownerService.findAll();
-        own.forEach(owner -> {
-            owner.getPets().forEach(pet -> {
-                System.out.println(pet.getPetType().getName());
-            });
-        });
         HashMap<Owner, Set<Pet>> ownpets= new HashMap<>();
         System.out.println("-------------------------------------");
         for (Owner owner : own) {
             ownpets.put(owner, owner.getPets());
-            ownpets.values().forEach(pets -> {
-                pets.forEach(pet -> {
-                    System.out.println(pet.getPetType().getName());
-                });
-            });
         }
         model.addAttribute("ownpets",ownpets);
         return "owners/index";
