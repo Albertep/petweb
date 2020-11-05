@@ -35,6 +35,8 @@ class OwnerControllerTest {
     MockMvc mockMvc;
 
     Set<Owner> owners;
+
+    Owner owner;
     @BeforeEach
     void setUp() {
         owners=new HashSet<>();
@@ -42,7 +44,8 @@ class OwnerControllerTest {
         Set<Pet> pets2=new HashSet<>();
         pets.add(Pet.builder().name("catty").build());
         pets2.add(Pet.builder().name("doggie").build());
-        owners.add(Owner.builder().id(1L).pets(pets).build());
+        owner=Owner.builder().id(1L).pets(pets).build();
+        owners.add(owner);
         owners.add(Owner.builder().id(1L).pets(pets2).build());
 
         mockMvc = MockMvcBuilders
@@ -59,7 +62,7 @@ class OwnerControllerTest {
                 .andExpect(model().attribute("prop",hasSize(2)));
     }
     @Test
-    void listOwnersIndex() throws Exception {
+    void listOwnersByIndex() throws Exception {
         when(ownerService.findAll()).thenReturn(owners);
         mockMvc.perform(get("/owners/index"))
                 .andExpect(status().isOk())
@@ -74,4 +77,13 @@ class OwnerControllerTest {
                 .andExpect(view().name("notimplemented"));
         verifyZeroInteractions(ownerService);
     }
+
+  @Test
+  void findOwnersById() throws Exception {
+    when(ownerService.findById(anyLong())).thenReturn(owner);
+    mockMvc.perform(get("/owners/1"))
+        .andExpect(status().isOk())
+        .andExpect(view().name("owners/ownerDetails"))
+        .andExpect(model().attribute("owner",hasProperty("id",is(1l))));
+  }
 }
