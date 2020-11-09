@@ -1,5 +1,7 @@
 package tutorialweb.petweb.services.map;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import tutorialweb.petweb.model.Owner;
@@ -75,4 +77,55 @@ public class OwnerMapService extends  AbstractMapService<Owner, Long> implements
         });
         return returnedOwner[0];
     }
+
+     @Override
+    public List<Owner> findAllByLastNameLike(String lastname) {
+        List<Owner>ownerList=new ArrayList<>();
+        if (lastname==""){
+            return List.copyOf(map.values());
+        }
+         for (Owner owner : map.values()) {
+             int beginIndex = 0;
+             int endIndex = lastname.length();
+             boolean found = false;
+             boolean flag = false;
+             boolean exist = true;
+             if (lastname == owner.getLastName().substring(beginIndex, endIndex)) {
+                 ownerList.add(owner);
+                 break;
+             } else {
+                 while (!found && exist) {
+                     if (!flag) {
+                         beginIndex++;
+                     } else {
+                         endIndex--;
+                     }
+
+                     if (beginIndex == endIndex) {
+                         endIndex--;
+                         beginIndex = 0;
+                     }
+                     if (endIndex == 0) {
+                         if (!flag) {
+                             flag = true;
+                             endIndex = lastname.length();
+                         } else {
+                             exist = false;
+                         }
+                     }
+                     if (lastname == owner.getLastName().substring(beginIndex, endIndex)) {
+                         ownerList.add(owner);
+                         found = true;
+                     }
+                 }
+             }
+         }
+         return ownerList;
+    }
+
+/*  @Override
+   public List<Owner> findAllByLastNameLike(String lastname) {
+       return List.copyOf(map.values());
+   }*/
+
 }

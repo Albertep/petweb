@@ -1,5 +1,6 @@
 package tutorialweb.petweb.services.springdatajpa;
 
+import java.util.List;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import tutorialweb.petweb.model.Owner;
@@ -29,6 +30,11 @@ public class OwnerSDJpaService  implements OwnerService {
     @Override
     public Owner findByLastName(String lastname) {
         return ownerRepository.findByLastName(lastname);
+    }
+
+    @Override
+    public List<Owner> findAllByLastNameLike(String lastname) {
+        return ownerRepository.findAllByLastNameLike(lastname);
     }
 
     @Override
